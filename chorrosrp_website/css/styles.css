@@ -1,0 +1,126 @@
+
+/* ChorrosRP - simple store theme */
+:root{
+  --bg:#0b0b0b;
+  --card:#111111;
+  --accent:#1aff4d;
+  --accent-dark:#13d23a;
+  --muted:#bdbdbd;
+  --graffiti:#ffcc00;
+  --danger:#e74c3c;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --maxw:1100px;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.02), transparent 10%),
+              linear-gradient(180deg, #070707 0%, #0f0f0f 100%);
+  color:#eee;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header */
+.header{
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  padding:20px 0;
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.container{
+  width:90%;
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  justify-content:space-between;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo img{height:64px; width:64px; object-fit:cover; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.logo h1{margin:0; font-size:20px; letter-spacing:1px; color:var(--accent)}
+
+/* Nav */
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+.hero{
+  width:100%;
+  padding:60px 0;
+  background-image: url('../assets/images/inspiration_screenshot.png');
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.45) contrast(1.05);
+  position:relative;
+}
+.hero .overlay{
+  position:relative;
+  width:90%;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:60px;
+  display:flex;
+  gap:30px;
+  align-items:center;
+  justify-content:space-between;
+}
+.hero .intro{
+  flex:1;
+}
+.hero h2{color:var(--accent); font-size:36px; margin:0 0 10px}
+.hero p{color:var(--muted); margin:0 0 18px}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:10px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+  color:#061003;
+  font-weight:700;
+  text-decoration:none;
+  margin-right:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* Cards / Shop */
+.section{width:90%; max-width:var(--maxw); margin:40px auto 80px}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:22px}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.card img{width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px}
+.card h3{margin:0 0 8px; color:var(--accent)}
+.card p{margin:0 0 12px; color:var(--muted)}
+.card .price{font-weight:800; margin-bottom:12px}
+.pay-buttons{display:flex; gap:8px; flex-wrap:wrap}
+.pay-buttons a{flex:1; text-align:center; padding:10px 8px; border-radius:8px; text-decoration:none; font-weight:700}
+.mp{background:#009ee3; color:white} /* Mercado Pago blue */
+.pp{background:#003087; color:white} /* PayPal dark blue */
+.nx{background:#f58220; color:white} /* Naranja X orange */
+
+/* Footer */
+footer{padding:30px 0; text-align:center; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03)}
+.small{font-size:13px; color:var(--muted)}
+
+/* Responsive */
+@media(max-width:700px){
+  .hero .overlay{padding:30px; flex-direction:column; text-align:center}
+}
